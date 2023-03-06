@@ -6,47 +6,47 @@ static const int init_size = 1;
 
 static int endofline(FILE *fp, int c);
 
-void init_line(Fline *fl, char *fname)
+void init_line(Fline *this, char *fname)
 {
-    fl->fp = fopen(fname, "r");
-    if (fl->fp == NULL) {
+    this->fp = fopen(fname, "r");
+    if (this->fp == NULL) {
         fprintf(stderr, "File open error!\n");
         exit(1);
     }
 
-    fl->cap = init_size;
-    fl->line = (char *)malloc(fl->cap);
-    if (fl->line == NULL) {
+    this->cap = init_size;
+    this->line = (char *)malloc(this->cap);
+    if (this->line == NULL) {
         fprintf(stderr, "Memory error!\n");
         exit(1);
     }
 }
 
-char *get_line(Fline *fl)
+char *get_line(Fline *this)
 {
     int i, c;
     char *newl;
 
-    for (i = 0; (c = getc(fl->fp)) != EOF && !endofline(fl->fp, c); i++) {
-        if (i >= fl->cap - 1) {
-            fl->cap *= 2;
-            newl = (char *)realloc(fl->line, fl->cap);
+    for (i = 0; (c = getc(this->fp)) != EOF && !endofline(this->fp, c); i++) {
+        if (i >= this->cap - 1) {
+            this->cap *= 2;
+            newl = (char *)realloc(this->line, this->cap);
             if (newl == NULL) {
-                fl->cap = 0;
+                this->cap = 0;
             }
-            fl->line = newl;
+            this->line = newl;
         }
-        fl->line[i] = c;
+        this->line[i] = c;
     }
-    fl->line[i] = '\0';
+    this->line[i] = '\0';
 
-    return (c == EOF && i == 0) ? NULL : fl->line;
+    return (c == EOF && i == 0) ? NULL : this->line;
 }
 
-void del_line(Fline *fl)
+void del_line(Fline *this)
 {
-    fclose(fl->fp);
-    free(fl->line);
+    fclose(this->fp);
+    free(this->line);
 }
 
 static int endofline(FILE *fp, int c)
