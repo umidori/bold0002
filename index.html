@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown=""
+				data-separator="^\n---$"
+				data-separator-vertical="^\n>>>$">
+				<script type="text/template">
+## オブジェクト指向の起源
+
+鳥海秀一
+
+---
+### 講師紹介
+- - -
+* 名前：鳥海秀一
+* 出身：北海道
+* ボールド入社：2020年5月
+* 趣味：プログラミング
+<aside class="notes">
+  発表者が見るノート   
+  伝えたいことをメモ  
+</aside>
+
+---
+### プログラミングパラダイムの変遷
+- - -
+* 手続き型プログラミングのパラダイムは、手続き→モジュール→抽象データ→オブジェクト指向→ジェネリックと変遷してきた
+* IBMの流布した「構造化プログラミング」は「手続き」のパラダイムに人々を閉じ込めた
+* このため、90年代にオブジェクト指向が登場したとき、人々はそれが何か理解できずに混乱した
+
+---
+### モジュールとは
+<div style="font-size: 30px">情報処理入門コース『基本プログラミング』（岩波書店）より</div>
+
+- - -
+* 一連の操作が決まっていて、それらの操作によって意味内容が定まる抽象的な対象を抽象データ型いう
+* 抽象データ型を具現するには、いくつかの変数とその操作を行う関数を設けることになる
+* 論理的に結びついた一群の変数・手続きなどの塊をモジュールという
+
+---
+### G.J.マイヤーズのモジュールの定義
+<div style="font-size: 30px">『ずっと受けたかったソフトウェア設計の授業』（翔泳社）より</div>
+
+- - -
+* 閉じたサブルーチンであること
+* プログラム内の他のどんなモジュールからも呼び出せること
+* 独立してコンパイルできる可能性を持っていること
+
+---
+### 実演
+- - -
+1. 手続き型
+1. モジュール型
+1. 抽象データ型
+
+---
+### 手続き型
+- - -
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/0th
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/1st
+
+---
+### モジュール型
+- - -
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/2th
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/3st
+
+---
+### 抽象データ型
+- - -
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/4th
+1. https://github.com/umidori/bold0002/tree/main/ModuleToClass/5st
+
+---
+### オブジェクト指向の３大要素
+- - -
+* かつて、オブジェクト指向の３大要素としてカプセル化、継承、多態性が唱えられたことがあった
+* 現在では、継承はカプセル化を破壊するので使わないほうが良いと言われるようになっている
+* 多態性については、多くの場合ジェネリックプログラミングで代替できる
+* オブジェクト指向はドット記法による情報隠蔽のみで説明した方が良いのではないか（鳥海の意見）
+
+---
+### 次回予告
+- - -
+* 関数型プログラミングの世界
+
+
+				</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
