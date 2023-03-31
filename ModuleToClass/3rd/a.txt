@@ -1,3 +1,5 @@
-a
-cccc
-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+A	carrot	150
+A	radish	100
+B	candy	130
+C	apple	170
+C	melon	190

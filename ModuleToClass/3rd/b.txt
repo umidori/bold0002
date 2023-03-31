@@ -1,2 +1,4 @@
-bb
-dddddddd
+A	lettuce	200
+B	biscuit	250
+B	cracker	160
+C	orange	180
