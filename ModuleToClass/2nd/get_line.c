@@ -37,6 +37,7 @@ char *get_line(void)
             newl = (char *)realloc(line, cap);
             if (newl == NULL) {
                 cap = 0;
+                return NULL;
             }
             line = newl;
         }

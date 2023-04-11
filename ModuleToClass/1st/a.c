@@ -65,6 +65,7 @@ static char *get_line(FILE *fp)
             if (newl == NULL) {
                 free(line);
                 cap = 0;
+                return NULL;
             }
             line = newl;
         }

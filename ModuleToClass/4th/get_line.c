@@ -33,6 +33,7 @@ char *get_line(Fline *this)
             newl = (char *)realloc(this->line, this->cap);
             if (newl == NULL) {
                 this->cap = 0;
+                return NULL;
             }
             this->line = newl;
         }

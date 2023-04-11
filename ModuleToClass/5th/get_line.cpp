@@ -33,6 +33,7 @@ char *Fline::get_line()
             newl = (char *)realloc(line, cap);
             if (newl == NULL) {
                 cap = 0;
+                return 0;
             }
             line = newl;
         }
